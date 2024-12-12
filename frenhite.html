@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fahrenheit to Celsius Converter</title>
+  <style>
+    #result {
+  color: blue;
+}
+div{
+  background-color: lightblue;
+  border: 10px solid blue;
+  padding: 20px;
+  
+  margin: 20px auto;
+}
+  </style>
+</head>
+<body>
+  <script>
+    function fahrenheitToCelsius() {
+    const fahrenheitInput = document.getElementById('fahrenheitInput');
+    const fahrenheit = parseFloat(fahrenheitInput.value);
+    const resultElement = document.getElementById('result');
+  
+    const celsius = (fahrenheit - 32) * 5 / 9;
+  
+    resultElement.textContent = '{fahrenheit}°F is equal to {celsius.toFixed(2)}°C';
+    resultElement.style.fontSize = '18px';
+    resultElement.style.fontWeight = 'bold';
+  }
+  </script>
+  <div>
+    <h2>Convert the Ferienhite to Celsius</h2>
+
+    <input type="number" id="fahrenheitInput" placeholder="Enter Fahrenheit temperature">
+    <button onclick="fahrenheitToCelsius()">Convert</button>
+    <p id="result"></p>
+  </div>
+  <script src="fren.js"></script>
+</body>
+</html>

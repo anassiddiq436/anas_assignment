@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Factorial Using </title>
+  <style>
+
+    div{
+      color: blue;
+      font-size: 40px;
+    }
+
+    #result {
+  color: blue;
+}
+#border{
+  border-style: solid;
+}
+
+div{
+  background-color: lightblue;
+  border: 10px solid blue;
+  padding: 20px;
+  
+  margin: 20px auto;
+}
+  </style>
+</head>
+<body>
+
+  <div>
+
+    
+    <form onsubmit="return fun1()">
+      <input type ="text" id="num1" placeholder="Enter the number" itemid="border">
+      <br><br><br>
+      <input type="submit" value="Submit Now">
+      <br>
+      <br>
+      <div  id="mess">Result</div>
+    </form>
+    
+  </div>
+  <script>
+    function fun1(){
+      a=document.getElementById("num1").value;
+      f=1;
+      if(a=="")
+    {
+      document.getElementById("mess").innerHTML="Please Enter the number";
+      return false;
+    }
+    else
+    {
+      for(var i=1;i<=a;i++)
+    {
+      f=f*i;
+    }
+    document.getElementById("mess").innerHTML="The factorial is:"+f;
+    return false;
+    }
+    }
+  </script>
+  
+
+</body>
+</html> 

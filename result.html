@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>GCS</title>
+    </head>
+    <style>
+        body{
+            font-family: arial,sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: whitesmoke;
+        }
+        .container{
+            background: #e6030367;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(red, green, blue, alpha);
+        }
+        .sub1{
+            background: red;
+            
+
+        }
+        .sub2{
+            background-color: yellow;
+            
+        }
+        .sub3{
+            background-color: lightgreen;
+        }
+        .sub4{
+            background-color: aqua;
+        }
+
+    </style>   
+    <body>
+
+        
+        <div class="container">
+        
+            <form>
+
+                <div class="sub1">
+                    <label>Data analysis alghorithm</label>
+                    <input id="subone" type="number" name="" placeholder="Marks">
+                </div>
+
+                <div class="sub2">
+                    <label>Accounting</label>
+                    <input id="subtwo" type="number" name="" placeholder="Marks">
+                </div>
+
+                <div class="sub3">
+                    <label>Data base</label>
+                    <input id="subthree" type="number" name="" placeholder="Marks">
+                </div>
+
+                <div class="sub4">
+                    <label>Theory of automata</label>
+                    <input id="subfour" type="number" name="" placeholder="Marks">
+                </div>
+
+                <div>
+                    <button onclick=" return calculate()">Calculate</button>
+                </div>
+
+            </form> 
+
+            <div>
+
+                <table>
+
+                    <tr>
+                        <td>Total Marks:</td>
+                        <td>400</td>
+                    </tr>
+
+                    <tr>
+                        <td>Obtained Marks:</td>
+                        <td id="obtain"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Percentage:</td>
+                        <td id="per"></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Grade:</td>
+                        <td id="grade"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Remarks:</td>
+                        <td id="remarks"></td>
+                    </tr>
+
+                </table>
+            </div>
+
+        </div>
+
+                        <script>
+                            function calculate() {
+                
+                let a=parseInt (document.getElementById('subone').value);
+                let b=parseInt (document.getElementById('subtwo').value);
+                let c=parseInt (document.getElementById('subthree').value);
+                let d=parseInt (document.getElementById('subfour').value);
+                
+                if(a>100 || b>100 || c>100 || d>100) {
+                 alert("Please enter correct value");
+                }
+                
+                else
+                {
+                 let  obtain=a+b+c+d;
+                 document.getElementById("obtain").innerHTML=obtain;
+                 let per=obtain/400*100;
+                 document.getElementById("per").innerHTML=per;
+                 if (a>40 && b>40 && c>40 && d>40) {
+                     document.getElementById("remarks").innerHTML="<span style='color:#292'>Pass</span>";
+                
+                 }
+                 else
+                 {
+                     document.getElementById("remarks").innerHTML="<span style='color:red'>Fail</span>";
+                
+                 }
+                
+                 if (per>=80) {
+                
+                     document.getElementById("grade").textContent="A";
+                 }
+                
+                 else if (per>=70) {
+                
+                     document.getElementById("grade").textContent="B";
+                 }
+                 
+                 else if (per>=60) {
+                
+                     document.getElementById("grade").textContent="C";
+                 }
+                
+                 else if (per>=50) {
+                
+                     document.getElementById("grade").textContent="D";
+                 }
+                
+                 else if (per>=40) {
+                
+                     document.getElementById("grade").textContent="E";
+                 }
+                
+                 else  {
+                
+                     document.getElementById("grade").textContent="F";
+                 }
+                 return false;
+                 
+                 
+                
+                }
+                }
+                        </script>
+        
+    </body>
+</html>
